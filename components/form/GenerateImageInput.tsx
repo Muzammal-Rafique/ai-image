@@ -1,0 +1,14 @@
+import React from 'react'
+import { Input } from '../ui/input'
+import { Button } from '../ui/button'
+
+const GenerateImageInput = () => {
+  return (
+    <div className='mb-5 flex space-x-2'>
+        <Input placeholder='Moutain Lookout' className='p-6' />
+        <Button className='p-6'>Generate Image</Button>
+    </div>
+  )
+}
+
+export default GenerateImageInput
