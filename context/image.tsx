@@ -1,10 +1,11 @@
 'use client'
+import { generateImageAi } from "@/actions/image";
 import React , { createContext , useState} from "react"
 import { toast } from "react-hot-toast"
 
-interface ImageType {
-    imageUrl: string;
-}
+// interface ImageType {
+//     imageUrl: string;
+// }
 
 interface ImageContextType {
     imagePrompt: string;
@@ -22,9 +23,11 @@ export const ImageProvider = ({children} : {children: React.ReactNode}) => {
     const [loading , setLoading] = useState(false)
 
     const generateImage = async() => {
-        console.log("Generating image");
-        
-        toast.success("Image has been generated with AI")
+        try {
+            await generateImageAi()
+        } catch (error) {
+            toast.error(error)
+        }
     }
 
     return(
