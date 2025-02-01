@@ -3,9 +3,9 @@ import { generateImageAi } from "@/actions/image";
 import React , { createContext , useState} from "react"
 import { toast } from "react-hot-toast"
 
-// interface ImageType {
-//     imageUrl: string;
-// }
+interface ImageType {
+    imageUrl: string;
+}
 
 interface ImageContextType {
     imagePrompt: string;
